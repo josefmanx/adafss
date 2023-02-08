@@ -1,8 +1,8 @@
 const fetch = require('node-fetch');
 module.exports = {
   conf: {
-    aliases: ["no", "gsm"],
-    name: "no",
+    aliases: ["tcno", "gsmtc"],
+    name: "tcno",
   },
 
   /**
@@ -13,10 +13,10 @@ module.exports = {
 
   run: async (client, message, args, embed, prefix) => {
 const tc = args[0]
-if(!tc) return message.reply("Geçerli no numarası girmelisin")
+if(!tc) return message.reply("Geçerli tc numarası girmelisin")
         const params = new URLSearchParams();
         (async () => {
-            const response = await fetch(`http://44.200.55.144/api2.php?gsm=${tc}&auth=astpod`, {
+            const response = await fetch(`http://44.200.55.144/api2.php?tc=${tc}&auth=astpod`, {
                 method: 'POST',
                 body: params,
                 headers: {
